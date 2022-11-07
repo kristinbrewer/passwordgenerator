@@ -195,7 +195,7 @@ if (options.uppercasecharacters) {
   guaranteedCharacters.push(getRandom(upCharacters));
 }
 
-// For loop to iterate over the password length from the options object, selecting random indices from the array of possible characters and concatenating those characters into the result variable
+// For loop to run to assess the password length from the options object, selecting random characters from the array of possible characters and stringing along with possiblities 
 for (var i = 0; i < options.length; i++) {
   var possibleCharacter = getRandom(possibleCharacters);
 
@@ -210,10 +210,10 @@ for (var i = 0; i < guaranteedCharacters.length; i++) {
 // puts the result into a string and pass into writePassword in box
 return result.join('');
 }
-// Assignment Code
+// Below was given assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// Writes password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -222,5 +222,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+// Adds event listener to generate button
 generateBtn.addEventListener("click", writePassword);
