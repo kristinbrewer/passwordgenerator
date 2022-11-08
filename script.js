@@ -202,7 +202,7 @@ for (var i = 0; i < options.length; i++) {
   result.push(possibleCharacter);
 }
 
-// Includes at least one of each guaranteed character in the result
+// for loop at least one of each guaranteed character in the result
 for (var i = 0; i < guaranteedCharacters.length; i++) {
   result[i] = guaranteedCharacters[i];
 }
