@@ -93,7 +93,7 @@ var specCharacters = [
 function passwordoptions() {
     //stores lenght of input, parseInt converts string to number, 10 for possible numbers (integars)
     var length = parseInt(
-        prompt('How many characters would you like your passward to contain?'),
+        prompt('How many characters would you like your password to contain?'),
          10);
          //verifys if input is a number, Number.isNan checks to see if value is a number
     if (Number.isNan(length)) {
