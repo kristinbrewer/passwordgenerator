@@ -90,13 +90,13 @@ var specCharacters = [
   ];
   
 //Prompt for password options
-function passwordoptions() {
+function getpasswordoptions() {
     //stores lenght of input, parseInt converts string to number, 10 for possible numbers (integars)
     var length = parseInt(
         prompt('How many characters would you like your password to contain?'),
          10);
          //verifys if input is a number, Number.isNan checks to see if value is a number
-    if (Number.isNan(length)) {
+      if (Number.isNaN(length)) {
         alert('Password length must be provided as a number');
         //return ends the function
         return null;
@@ -133,7 +133,7 @@ if (
     return null;
 }
 
-//not totally understanding this object???
+//object that stores user's preferences
 var passwordoptions = {
     length: length,
     specialcharacters: specialcharacters,
@@ -142,20 +142,20 @@ var passwordoptions = {
     uppercasecharacters: uppercasecharacters,
 };
 return passwordoptions;
-} //end of passwordoption function 
+} //end of getpasswordoption function 
  
 
 //start of random password generation 
 //function that gets random element from array
-function getrandom(arr) {
+function getRandom(arr) {
     var randIndex = Math.floor(Math.random()*arr.length);
     var randElement = arr[randIndex];
     return randElement;
 }
 
 //starts function of generation based on input 
-function generatePassword(){
-    var options = passwordoptions();
+function generatePassword() {
+  var options = getpasswordoptions();
 //array stores password while being concatenated
     var result = [];
 // Array to store types of characters to include in password
@@ -198,7 +198,6 @@ if (options.uppercasecharacters) {
 // For loop to run to assess the password length from the options object, selecting random characters from the array of possible characters and stringing along with possiblities 
 for (var i = 0; i < options.length; i++) {
   var possibleCharacter = getRandom(possibleCharacters);
-
   result.push(possibleCharacter);
 }
 
@@ -216,10 +215,8 @@ var generateBtn = document.querySelector("#generate");
 // Writes password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
+  var passwordText = document.querySelector('#password');
   passwordText.value = password;
-
 }
 
 // Adds event listener to generate button
